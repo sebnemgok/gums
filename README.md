@@ -84,7 +84,9 @@ Yukarıdaki `for` döngüsünde yapılan şey aslında şu:
 
 Dosyanın içeriğine bakalım:
 
+```bash
 cat fastq.txt
+```
 
 İşlerimizi bu şekilde gönderiyıruz. Önce işi betiğimizi kontrol edelimö. Gerçekten de `sbatch ` komuotlarını düzgün bir şekjilde gönderebiliyor muyuz?
 
