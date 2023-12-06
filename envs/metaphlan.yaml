@@ -1,0 +1,6 @@
+name: metaphlan
+channels:
+  - bioconda
+dependencies:
+  - metaphlan
+
