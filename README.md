@@ -7,6 +7,126 @@ date: "2023-11-22"
 
 # Metodoloji
 
+fastqc
+cutadapt
+fastqc
+metaphlan
+
+## Fastq dosyalarının fastqc ile kalite kontrolü
+
+Proje klasörümüzü oluşturduk ve klasör içinde girdi(data), işlem(scripts, tercihe bağlı) ve çıktı(results) klasörlerini ekledik
+
+```bash
+mkdir klasöradı
+
+mkdir klasöradı/data
+mkdir klasöradı/scripts
+mkdir klasöradı/results
+```
+
+veya;
+
+```bash
+cd klasöradı
+````
+
+komutu ile klasörlerde ''1'' adım ilerleyebiliriz ve girdi, işlem ve çıktı klasörlerini içeride oluşturabiliriz.
+
+Girdilerimizi, okumalarımızı data klasörüne indirmeliyiz. İşlem yaparken bulunduğumuz klasörün farkında olmalıyız. Değilsek; 
+
+```bash
+pwd
+```
+
+ile nerede olduğumuza bakabiliriz.
+
+Girdilerimizi indiriyoruz
+
+```bash
+wget link
+```
+
+ve yapacağımız işleme ait betiği (scripti) eğer bizde hali hazırda yoksa ulaşabileceğimiz başka bir hesaptan kopyalıyoruz(klonluyoruz).
+Eğer script klasörü kullanıyorsak, klonlamayı buraya yaptığımıza emin olmalıyız.
+
+Script klasörünün içindeysek;
+
+```bash
+cp /.../.../.../.../betikadı1.sh .
+```
+
+sondaki ''nokta'', bulunduğum yere bu işlemi yapma komutunu verir.
+
+Değilsek;
+
+```bash
+cp /.../.../.../.../betikadı1.sh /.../.../.../klasöradı/scripts
+```
+
+Yapacağımız işleme dair betiği aldık, bu betiği mutlaka kendi işimize göre düzenlememiz gerekir.
+
+Betiği düzenlemek için düzenleyici sayfasına girmeliyiz
+
+```bash
+nano betikadı1.sh
+```
+
+yapılacak düzenlemeler nasıl yazılmalı?
+
+Eğer işi göndermeden önce düzenleme yapmaktan ziyade okumak, kontrol etmek istiyorsak;
+
+```bash
+cat betikadı1.sh
+```
+
+İşi gönderelim;
+
+```bash
+sbatch betikadı1.sh
+```
+
+İşin durumunu kontrol etmek istiyorsak;
+
+```bash
+squeue
+```
+
+Birden fazla iş varsa kodun önüne kontrol etmek istediğimiz iş id'sini mutlaka boşluk bırakarak yazmalıyız.
+
+
+## Cutadapt ile Okumalardaki Adaptörlerin Uzaklaştırılması
+
+
+Önceki işlemin çıktıları results klasörüne gelmiş olmalı; cutadapt işlemi için girdilerimiz artık bu dosyalar olacak.
+Bu betikte adaptör kesip atma ve fastqc işlemleri birlikte yürütülecektir, pratik ve hızlı olması için betik bu şekilde düzenlenmiştir.
+
+Bulunduğumuz klasörü göz önünde bulundurarak betiği alalım;
+
+```bash
+cp /.../.../.../.../betikadı2.sh .
+```
+
+Ve betiği düzenleyelim;
+
+```bash
+nano betikadı2.sh
+```
+Betik içerisi anlatılacak
+
+
+İşi gönderelim
+
+```bash
+sbatch betikadı2.sh
+ ```
+
+
+anlatım
+
+```
+kod blogu 
+```
+
 ## Metaphlan çevresi kurulumu
 
 ```bash
